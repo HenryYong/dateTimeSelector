@@ -1,0 +1,25 @@
+{
+  "name": "datetime-selector",
+  "version": "1.0.0",
+  "description": "A lightweight, useful date&time selector",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenryYong/dateTimeSelector.git"
+  },
+  "keywords": [
+    "date",
+    "time",
+    "datetime-selector",
+    "dateTimeSelector"
+  ],
+  "author": "HenryYang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HenryYong/dateTimeSelector/issues"
+  },
+  "homepage": "https://github.com/HenryYong/dateTimeSelector#readme"
+}

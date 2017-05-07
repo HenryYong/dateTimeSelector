@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>demo</title>
+        <link rel="stylesheet" href="dist/css/dateTimeSelector.css">
+        <style>
+            .row{
+                padding: 20px 20px 0 20px;
+            }
+
+            .row p{
+                margin-bottom: 10px;
+            }
+
+            .row a{
+                display: inline-block;
+                margin-top: 10px;
+                padding: 7px 13px;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                color: #333;
+                text-decoration: none;
+                background-color: #fff;
+                font-size: 12px;
+            }
+
+            .row a:hover{
+                background-color: #fafafa;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- basic -->
+        <div class="row">
+            <p>默认初始化，default settings</p>
+            <input type="text" data-id="datetime-selector">
+            <a href="javascript:basicGetTime()">getTime</a>
+        </div>
+
+        <!-- simple -->
+        <div class="row">
+            <p>初始化时设置时间</p>
+            <input type="text" data-id="t-simple">
+            <a href="javascript:simpleGetTime()">getTime</a>
+        </div>
+
+        <!-- range -->
+        <div class="row">
+            <p>初始设置滚动回调函数</p>
+            <input type="text" data-id="t-range">
+            <a href="javascript:rangeGetTime()">getTime</a>
+        </div>
+
+        <!-- combined -->
+        <div class="row">
+            <p>初始设置选中回调函数</p>
+            <input type="text" data-id="t-combined">
+            <a href="javascript:combinedGetTime()">getTime</a>
+        </div>
+        <script src="dist/js/jUtils.js"></script>
+        <script src="src/js/dateTimeSelector.js"></script>
+        <script text="javascript">
+            var t_basic = new dateTimeSelector();
+
+            function basicGetTime() {
+                alert(t_basic.getTime());
+            }
+
+            var t_simple = new dateTimeSelector({
+                el: '[data-id="t-simple"]',
+                type: 't-simple',
+                time: '12:34:56'
+            });
+
+            function simpleGetTime() {
+                alert(t_simple.getTime());
+            }
+
+            var t_range = new dateTimeSelector({
+                el: '[data-id="t-range"]',
+                type: 't-range',
+                onScroll: function() {
+                    console.log('滚动ing')
+                }
+            });
+
+            function rangeGetTime() {
+                alert(t_range.getTime());
+            }
+
+            var t_combined = new dateTimeSelector({
+                el: '[data-id="t-combined"]',
+                type: 't-combined',
+                onChange: function(e) {
+                    console.log(e)
+                }
+            });
+
+            function combinedGetTime() {
+                alert(t_combined.getTime());
+            }
+        </script>
+    </body>
+</html>
